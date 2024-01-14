@@ -1,0 +1,12 @@
+{
+    "development": {
+        "username": "",
+        "password": "",
+        "database": "",
+        "host": "",
+        "dialect": "mariadb"
+    },
+    "test": {},
+    "production": {}
+}
+
