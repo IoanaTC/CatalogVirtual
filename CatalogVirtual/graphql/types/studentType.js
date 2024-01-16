@@ -4,7 +4,7 @@ const GradeType = require("./gradeType");
 
 const StudentType = new GraphQLObjectType({
     name: "Student",
-    description: "Student,
+    description: "Student",
     fields: () => ({
         id: { type: GraphQLID },
         name: { type: GraphQLString },

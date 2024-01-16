@@ -1,11 +1,12 @@
-@echo off
+@ECHO off
 
-npm init -y
+cd D:\CatalogVirtual\CatalogVirtual
 
-npm install express apollo-server-express graphql mysql2 jsonwebtoken sequelize dotenv mariadb sequelize-cli faker @ngneat/falso casual
+call npm init -y
+call npm install express apollo-server-express graphql graphql-http mysql2 jsonwebtoken sequelize dotenv mariadb sequelize-cli faker @ngneat/falso casual
 
-npx sequelize-cli db:migrate
-npx sequelize-cli db:seed:all
+call npx sequelize-cli db:migrate
+call npx sequelize-cli db:seed:all
 
 node index.js
 
