@@ -28,14 +28,14 @@ module.exports = {
                 });
             });
 
-            await queryInterface.bulkInsert('teacher_subject', mockTeacherSubjects, {});
+            await queryInterface.bulkInsert('TeacherSubject', mockTeacherSubjects, {});
         } catch (error) {
-            console.error('Error seeding teacher_subject:', error);
+            console.error('Error seeding TeacherSubject:', error);
         }
     },
 
     down: async (queryInterface, Sequelize) => {
-        await queryInterface.bulkDelete('teacher_subject', null, {});
+        await queryInterface.bulkDelete('TeacherSubject', null, {});
     }
 };
 
