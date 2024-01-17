@@ -6,24 +6,29 @@ module.exports = (sequelize, DataTypes) => {
     class TeacherSubject extends Model {
 
         static associate(models) {
-            models.Grade.belongsTo(models.Subject, {
-                foreignKey: 'subjectId',
+            // Define association with Teacher
+            models.TeacherSubject.belongsTo(models.Teacher, {
+                foreignKey: 'teacherId',
             });
 
-            models.Grade.belongsTo(models.Subject, {
+            // Define association with Subject
+            models.TeacherSubject.belongsTo(models.Subject, {
                 foreignKey: 'subjectId',
-            });}
+            });
+        }
     }
 
     TeacherSubject.init({
         years: DataTypes.INTEGER,
+        // Assuming you have teacherId and subjectId fields
+        teacherId: DataTypes.INTEGER,
+        subjectId: DataTypes.INTEGER,
     }, {
         sequelize,
         modelName: 'TeacherSubject',
-        tableName: 'teacher_subject',
+        tableName: 'teachersubject',
         timestamps: false,
     });
 
     return TeacherSubject;
 };
-
