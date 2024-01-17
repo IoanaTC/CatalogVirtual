@@ -1,12 +1,11 @@
 const {
     GraphQLNonNull,
-    GraphQLString,
-    GraphQLID
-  } = require("graphql");
-  const GuardianType = require("../types/GuardianType");
-  const createGuardianResolver = require('../resolvers/createGuardianResolver');
-  
-  const createGuardianMutation = {
+    GraphQLString
+} = require("graphql");
+const GuardianType = require("../types/GuardianType");
+const createGuardianResolver = require('../resolvers/createGuardianResolver');
+
+module.exports = {
     type: GuardianType,
     args: {
         name1: {
@@ -20,4 +19,4 @@ const {
         },
     },
     resolve: createGuardianResolver,
-};  
+};

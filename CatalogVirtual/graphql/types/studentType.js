@@ -8,11 +8,11 @@ const StudentType = new GraphQLObjectType({
         name: { type: GraphQLString },
         email: { type: GraphQLString },
         guardian: {
-            type: require("./guardianType"), // Delayed import
+            type: require("./guardianType"), 
             resolve: (student) => student.getGuardian(),
         },
         grades: {
-            type: new GraphQLList(require("./gradeType")), // Delayed import
+            type: new GraphQLList(require("./gradeType")), 
             resolve: (student) => student.getGrades(),
         },
     }),

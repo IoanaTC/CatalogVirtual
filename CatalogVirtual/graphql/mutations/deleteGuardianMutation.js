@@ -1,4 +1,3 @@
-
 const {
   GraphQLNonNull,
   GraphQLID,
@@ -6,7 +5,7 @@ const {
 } = require("graphql");
 const deleteGuardianResolver = require('../resolvers/deleteGuardianResolver');
 
-const deleteGuardianMutation = {
+module.exports = {
   type: GraphQLBoolean,
   args: {
     id: {
