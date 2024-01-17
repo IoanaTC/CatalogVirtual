@@ -1,20 +1,26 @@
-const {
-    GraphQLObjectType,
+const { 
+  GraphQLObjectType, 
 } = require('graphql');
 
-//const createStudentMutation = require('./mutations/createStudentMutation');
-//const updateStudentMutation = require('./mutations/updateStudentMutation');
-//const deleteStudentMutation = require('./mutations/deleteStudentMutation');
-//const loginMutation = require('./mutations/loginMutation');
+const createStudent = require('./mutations/createStudentMutation');
+const deleteStudent = require('./mutations/deleteStudentMutation');
+const createGrade = require('./mutations/createGradeMutation');
+const deleteGrade = require('./mutations/deleteGradeMutation');
+const createGuardian = require('./mutations/createGuardianMutation');
+const deleteGuardian = require('./mutations/deleteGuardianMutation');
+const login = require('./mutations/login');
 
 const mutationType = new GraphQLObjectType({
-    name: 'Mutation',
-    fields: {
-  //      createStudent: createStudentMutation,
-    //    updateStudent: updateStudentMutation,
-      //  deleteStudent: deleteStudentMutation,
-        //login: loginMutation,
-    }
-});
+  name: 'Mutation',
+  fields: {
+      createStudent: createStudent,
+      deleteStudent: deleteStudent,
+      createGrade: createGrade,
+      deleteGrade: deleteGrade,
+      createGuardian: createGuardian,
+      deleteGuardian: deleteGuardian,
+      login: login,
+  }
+})
 
 module.exports = mutationType;
