@@ -8,10 +8,10 @@ const SubjectType = new GraphQLObjectType({
         id: { type: GraphQLID },
         name: { type: GraphQLString },
         description: { type: GraphQLString },
-        grades: {
-            type: new GraphQLList(GradeType),
-            resolve: (subject) => subject.getGrades(),
-        },
+//        grades: {
+ //           type: new GraphQLList(GradeType),
+ //           resolve: (subject) => subject.getGrades(),
+ //       },
     }),
 });
 
