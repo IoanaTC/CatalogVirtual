@@ -1,6 +1,4 @@
 const { GraphQLObjectType, GraphQLID, GraphQLString, GraphQLList } = require("graphql");
-const GuardianType = require("./guardianType");
-const GradeType = require("./gradeType");
 
 const StudentType = new GraphQLObjectType({
     name: "Student",
@@ -10,15 +8,14 @@ const StudentType = new GraphQLObjectType({
         name: { type: GraphQLString },
         email: { type: GraphQLString },
         guardian: {
-            type: GuardianType,
+            type: require("./guardianType"), // Delayed import
             resolve: (student) => student.getGuardian(),
         },
         grades: {
-            type: new GraphQLList(GradeType),
+            type: new GraphQLList(require("./gradeType")), // Delayed import
             resolve: (student) => student.getGrades(),
         },
     }),
 });
 
 module.exports = StudentType;
-

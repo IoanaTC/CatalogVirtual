@@ -14,11 +14,11 @@ app.all('/', createHandler({
 }));
 
 app.all('/graphql', createHandler({
-   schema1,
-   context: (req) => {
-     return 0;
-   },
-}))
+    schema: schema1,
+    context: (req) => {
+      return 0;
+    },
+ }))
 async function start(port) {
     return new Promise((resolve) => app.listen({ port }, resolve));
 }

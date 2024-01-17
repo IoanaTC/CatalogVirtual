@@ -1,9 +1,10 @@
 const { GraphQLObjectType, GraphQLID, GraphQLInt } = require("graphql");
 const StudentType = require("./studentType");
-const SubjectType = require("./subjectType");
+const CommonType = require("./commonType");
 
 const GradeType = new GraphQLObjectType({
     name: "Grade",
+    interfaces: [CommonType],
     description: "grade",
     fields: () => ({
         id: { type: GraphQLID },
@@ -13,11 +14,10 @@ const GradeType = new GraphQLObjectType({
             resolve: (grade) => grade.getStudent(),
         },
         subject: {
-            type: SubjectType,
+            type: CommonType,
             resolve: (grade) => grade.getSubject(),
         },
     }),
 });
 
 module.exports = GradeType;
-

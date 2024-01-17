@@ -11,10 +11,10 @@ const teacherswithsubjectsQuery = require('./queries/teacherswithsubjectsQuery')
 const queryType = new GraphQLObjectType({
     name: 'Query',
     fields: {
-        student: studentsQuery,
-        teachers: teachersQuery,
-        subjects: subjectsQuery,
-        teacherswithsubjects: teacherswithsubjectsQuery,
+         students: studentsQuery,
+         teachers: teachersQuery,
+         subjects: subjectsQuery,
+         teacherswithsubjects: teacherswithsubjectsQuery,
         // studentGuardian: studentGuardianQuery,
         // teacherSubject: teacherSubjectQuery,
         // grade: gradeQuery,
